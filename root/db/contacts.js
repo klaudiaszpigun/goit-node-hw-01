@@ -1,6 +1,3 @@
-import { program } from "commander";
-import { promises as fs } from "fs";
-
 program.option(
   "-f, --file [type]",
   "file for saving contacts",
@@ -11,7 +8,6 @@ const contactsPath = program.opts().file;
 
 const listContacts = () => {
   const contacts = fs.readFile();
-  console.log(contacts);
 };
 
 const getContactById = (contactId) => {

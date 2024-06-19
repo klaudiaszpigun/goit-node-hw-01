@@ -1,4 +1,6 @@
+// parsowanie argumentów terminala
 import yargs from "yargs";
+// przetwarzanie arguentów z terminala
 import { hideBin } from "yargs/helpers";
 import {
   addContact,
@@ -7,6 +9,7 @@ import {
   removeContact,
 } from "./contacts.js";
 
+// usuwa z process.argv sciezke do node i sciezke do pliku by otrzymac sparsowane elementy dzieki yargs
 const argv = yargs(hideBin(process.argv)).argv;
 
 async function invokeAction({ action, id, name, email, phone }) {
